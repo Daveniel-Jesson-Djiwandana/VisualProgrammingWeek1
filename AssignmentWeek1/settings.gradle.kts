@@ -25,3 +25,4 @@ dependencyResolutionManagement {
 rootProject.name = "Week1Assignment"
 include(":app")
 include(":Soal1OrderingFood")
+include(":Soal2WizardAdventure")

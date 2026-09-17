@@ -1,7 +1,8 @@
 package com.daveniel_jesson_djiwandana.soal1orderingfood
 
 class AppFlow {
-    val menuList: ListMenu = ListMenu()
+    val menuList: MenuLogic = MenuLogic()
+    val orderList: OrderLogic = OrderLogic()
     init {
         menuList.addDummy(MenuThings("Nasi Goreng", 20.0))
         menuList.addDummy(MenuThings("Soto Betawi", 15.0))
@@ -33,6 +34,8 @@ class AppFlow {
     }
     fun mainMenu (input: Int) {
         when (input) {
+            1 -> orderList.addOrder(menuList)
+            2 -> orderList.showOrder()
             3 -> menuList.showMenu()
             4 -> menuList.addMenu()
             5 -> menuList.editMenu()

@@ -1,6 +1,6 @@
 package com.daveniel_jesson_djiwandana.soal1orderingfood
 
-class ListMenu {
+class MenuLogic {
     private var list: ArrayList<MenuThings> = ArrayList()
     public fun addDummy(menuThing: MenuThings) {
         list.add(menuThing)
@@ -16,10 +16,10 @@ class ListMenu {
         if (tempPrice == null) {
             println("Wrong Input\n")
         } else if(tempPrice < 0) {
-            println("Prices have to be positive!")
+            println("Prices have to be positive!\n")
         } else {
             list.add(MenuThings(tempName, tempPrice))
-            println("$tempName has been added to the menu!")
+            println("$tempName has been added to the menu!\n")
         }
 
     }
@@ -37,14 +37,14 @@ class ListMenu {
             } else {
                 val name: String = list.get(tempNum-1).getName()
                 list.removeAt(tempNum-1)
-                println("$name has been removed from the menu!")
+                println("$name has been removed from the menu!\n")
             }
 
         }
     }
     public fun editMenu() {
         if (list.isEmpty()) {
-            println("There is no menu items to edit!")
+            println("There is no menu items to edit!\n")
         } else {
             this.showMenu()
             println("What would you like to edit?")
@@ -62,11 +62,11 @@ class ListMenu {
                 if (tempPrice == null ) {
                     println("Wrong Input\n")
                 } else if(tempPrice < 0) {
-                    println("Prices have to be positive!")
+                    println("Prices have to be positive!\n")
                 } else {
                     list.get(tempNum-1).setName(tempName)
                     list.get(tempNum-1).setPrice(tempPrice)
-                    println("No. $tempNum has been edited from the menu!")
+                    println("No. $tempNum has been edited from the menu!\n")
                 }
 
 
@@ -88,4 +88,14 @@ class ListMenu {
         }
 
     }
+    public fun getSize(): Int {
+        return list.size
+    }
+    public fun getMenuThing(index: Int): MenuThings? {
+        if (index >= 0 || index <= list.size) {
+            return list.get(index)
+        }
+        return null
+    }
+
 }
