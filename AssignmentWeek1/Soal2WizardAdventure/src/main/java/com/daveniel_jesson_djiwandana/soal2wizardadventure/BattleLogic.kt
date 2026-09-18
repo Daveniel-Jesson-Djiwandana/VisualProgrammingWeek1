@@ -6,7 +6,7 @@ class BattleLogic {
         while (true) {
             println("---Battle---")
             wizard.showStatsBattle()
-
+            println("\n")
             println(enemy.getName())
             println("HP: ${enemy.getHP()}/${enemy.getMaxHP()}")
             println("Type: ${enemy.getType()}")
@@ -17,6 +17,7 @@ class BattleLogic {
                 |d. Drink potion
                 |e. Run
             """.trimMargin())
+            print("Choice: ")
             var choice: String = readln().uppercase()
             when (choice) {
                 "A" -> wizardAttack(wizard, enemy, "Fire")
@@ -109,6 +110,7 @@ class BattleLogic {
     private fun drinkPotion(wizard: Wizard): Int {
         println("1. HP Potion (stock: ${wizard.getHPPotion()})")
         println("2. MP Potion (stock: ${wizard.getManaPotion()})")
+        print("Choice: ")
         var choice: String = readln()
         if (choice == "1") {
             if (wizard.getHPPotion() <= 0) {
@@ -168,5 +170,16 @@ class BattleLogic {
             return 2
         }
         return 1
+    }
+    public fun resetStat (wizard: Wizard) {
+        wizard.setMaxHP(50)
+        wizard.setHP(50)
+        wizard.setMaxMana(30)
+        wizard.setMana(30)
+        wizard.setKills(0)
+        wizard.setEvolved(false)
+        wizard.setLifesteal(0)
+        wizard.setHPPotion(5)
+        wizard.setManaPPotion(5)
     }
 }
