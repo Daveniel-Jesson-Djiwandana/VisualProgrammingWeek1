@@ -78,6 +78,26 @@ class Wizard(name: String) {
     public fun setManaPPotion(manaPotion: Int) {
         this.manaPotions = manaPotion
     }
+    public fun showStatsNormal() {
+        println("---$name's STATS---")
+        println("HP: $HP/$maxHP")
+        println("Mana: $mana/$maxMana")
+        if (evolved) {
+            println("Lifesteal: $lifesteal")
+        } else {
+            println("Kills needed to evolve: $kills/5")
+        }
+        println("Mana Potions held: $manaPotions")
+        println("Health Potions held: $HPPotions")
 
+        println("-------------------")
+    }
+    public fun showStatsBattle() {
+        println(name)
+        println("HP: $HP/$maxHP")
+        println("Mana: $mana/$maxMana")
+        println("HP Potions: $HPPotions")
+        println("MP Potions: $manaPotions")
+    }
 
 }
