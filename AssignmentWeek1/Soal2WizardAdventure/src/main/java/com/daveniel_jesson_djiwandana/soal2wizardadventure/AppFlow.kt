@@ -15,10 +15,10 @@ class AppFlow {
                 |3. Quit Game
             """.trimMargin())
             print("Choice: ")
-            println("\n")
             var choice: String = readln()
             if (choice == "1") {
                 while (true) {
+                    println()
                     user.showStatsNormal()
                     println("""a. Drink Mana Potion
                         |b. Drink Health Potion
@@ -27,7 +27,6 @@ class AppFlow {
                     """.trimMargin())
                     print("Choice: ")
                     var input: String = readln().uppercase()
-                    println("\n")
                     if (input == "A") {
                         drinkManaPotion()
                     } else if (input == "B") {
